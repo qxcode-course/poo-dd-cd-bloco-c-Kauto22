@@ -1,0 +1,364 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-03_16-40-16",
+            "content": "@@ -249,24 +249,22 @@\n  self.__\n-counters\n+market\n : list%5Bs\n@@ -294,24 +294,22 @@\n  self.__\n-wainting\n+espera\n : list%5Bs\n@@ -325,32 +325,149 @@\n %7C None%0A        %0A\n+    def getMarket(self):%0A        return self.__market%0A    def getEspera(self):%0A        return self.__espera%0A        %0A\n     def __str__(\n@@ -510,16 +510,14 @@\n f.__\n-counters\n+market\n %7D, E\n@@ -535,17 +535,14 @@\n f.__\n-waintings\n+espera\n %7D%22%0A \n@@ -875,22 +875,16 @@\n   print(\n-budega\n )%0A%0A     \n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-03_16-45-43",
+            "content": "@@ -506,24 +506,22 @@\n  self.__\n-wainting\n+espera\n  = clien\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-11-11_15-49-11",
+            "content": "@@ -518,30 +518,25 @@\n ting\n-.append(cliente)%0A%0A    \n+ = cliente.append\n %0A%0Ade\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-11-11_15-59-05",
+            "content": "@@ -364,97 +364,8 @@\n f):%0A\n-        if self.__wainting is None:%0A            return f%22Caixas: %5B----%5D, Espera: %5B----%5D%22%0A\n     \n",
+            "lines": "42"
+        },
+        {
+            "label": "2025-11-11_16-00-44",
+            "content": "@@ -434,16 +434,8 @@\n ----\n--, -----\n %5D, E\n@@ -439,18 +439,23 @@\n , Espera\n+:\n  %5B\n+----\n %5D%22%0A     \n",
+            "lines": "44"
+        },
+        {
+            "label": "2025-11-11_16-01-48",
+            "content": "@@ -667,18 +667,12 @@\n et(%5B\n-int\n %5D, %5B\n-int\n %5D)%0A%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2025-11-11_16-02-24",
+            "content": "@@ -662,16 +662,28 @@\n  Market(\n+%5Bint%5D, %5Bint%5D\n )%0A%0A    w\n",
+            "lines": "44"
+        },
+        {
+            "label": "2025-11-11_16-03-53",
+            "content": "@@ -265,32 +265,30 @@\n : list%5Bstr%5D \n-%7C None =\n+= %5B%5D %7C\n  None%0A      \n@@ -320,16 +320,14 @@\n tr%5D \n-%7C None =\n+= %5B%5D %7C\n  Non\n",
+            "lines": "44"
+        },
+        {
+            "label": "2025-11-11_16-05-45",
+            "content": "@@ -447,11 +447,9 @@\n ---%5D\n- %5Cn\n+,\n  Esp\n",
+            "lines": "44"
+        },
+        {
+            "label": "2025-11-11_16-06-23",
+            "content": "@@ -446,16 +446,17 @@\n ----%5D %5Cn\n+ \n Espera %5B\n",
+            "lines": "44"
+        },
+        {
+            "label": "2025-11-11_16-06-36",
+            "content": "@@ -452,17 +452,16 @@\n %5CnEspera\n-:\n  %5B%5D%22%0A   \n",
+            "lines": "44"
+        },
+        {
+            "label": "2025-11-11_16-06-45",
+            "content": "@@ -883,16 +883,65 @@\n         \n+else:%0A            print(%22fail: comando inv%C3%A1lido%22)\n %0A%0Amain()\n",
+            "lines": "44"
+        },
+        {
+            "label": "2025-11-11_16-08-08",
+            "content": "@@ -443,16 +443,17 @@\n , -----%5D\n+ \n %5CnEspera\n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-11_16-08-36",
+            "content": "@@ -631,13 +631,8 @@\n nte)\n- = %5B%5D\n %0A%0A  \n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-11_16-09-32",
+            "content": "@@ -499,18 +499,18 @@\n ounters%7D\n-%5Cn\n+, \n Espera: \n@@ -627,16 +627,21 @@\n cliente)\n+ = %5B%5D\n %0A%0A    %0A%0A\n@@ -879,16 +879,26 @@\n udega)%0A%0A\n+        %0A%0A\n main()%0A \n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-11_16-13-16",
+            "content": "@@ -568,23 +568,19 @@\n liente: \n-Cliente\n+str\n ) -%3E str\n",
+            "lines": "41"
+        },
+        {
+            "label": "2025-11-11_16-15-54",
+            "content": "@@ -499,18 +499,18 @@\n ounters%7D\n-, \n+%5Cn\n Espera: \n",
+            "lines": "41"
+        },
+        {
+            "label": "2025-11-11_16-16-15",
+            "content": "@@ -345,111 +345,8 @@\n    %0A\n-    def arrive(self, cliente: Cliente) -%3E str %7C None:%0A        self.__wainting.append(cliente)%0A        %0A\n     \n@@ -499,18 +499,18 @@\n ounters%7D\n-%5Cn\n+, \n Espera: \n@@ -537,16 +537,110 @@\n         \n+%0A    def arrive(self, cliente: Cliente) -%3E str %7C None:%0A        self.__wainting.append(cliente)\n %0A%0A    %0A%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2025-11-11_16-17-15",
+            "content": "@@ -435,17 +435,25 @@\n liente)%0A\n+        \n %0A\n-\n     def \n@@ -471,121 +471,8 @@\n f):%0A\n-        counters = %22, %22.join(map(str, self.__counters))%0A        wainting = %22, %22.join(map(str, self.__wainting))%0A%0A\n     \n@@ -586,16 +586,23 @@\n aixas: %7B\n+self.__\n counters\n@@ -613,24 +613,31 @@\n spera: %7B\n+self.__\n wainting\n %7D%22%0A     \n@@ -628,16 +628,17 @@\n wainting\n+s\n %7D%22%0A     \n",
+            "lines": "42"
+        },
+        {
+            "label": "2025-11-11_16-19-06",
+            "content": "@@ -690,17 +690,16 @@\n Caixas: \n-%5B\n %7Bcounter\n@@ -700,17 +700,16 @@\n ounters%7D\n-%5D\n %5CnEspera\n@@ -710,17 +710,16 @@\n Espera: \n-%5B\n %7Bwaintin\n@@ -720,17 +720,16 @@\n ainting%7D\n-%5D\n %22%0A      \n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-11_16-19-49",
+            "content": "@@ -665,25 +665,16 @@\n ra: %5B%5D%22%0A\n-        %0A\n         \n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-11_16-20-39",
+            "content": "@@ -488,24 +488,29 @@\n  %22.join(map(\n+str, \n self.__count\n@@ -548,16 +548,21 @@\n oin(map(\n+str, \n self.__w\n",
+            "lines": "46"
+        },
+        {
+            "label": "2025-11-11_16-21-11",
+            "content": "@@ -463,84 +463,8 @@\n f):%0A\n-        if self.__counters is not None and self.__wainting is not None:%0A    \n     \n@@ -488,29 +488,24 @@\n  %22.join(map(\n-str, \n self.__count\n@@ -518,20 +518,16 @@\n         \n- \n-   \n wainting\n@@ -547,13 +547,8 @@\n map(\n-str, \n self\n@@ -560,35 +560,16 @@\n inting))\n-%0A            return\n %0A%0A      \n",
+            "lines": "46"
+        },
+        {
+            "label": "2025-11-11_16-22-16",
+            "content": "@@ -261,36 +261,45 @@\n ters: list%5Bstr%5D \n-= %5B%5D\n+%7C None = None\n %0A        self.__\n@@ -297,24 +297,25 @@\n   self.__wai\n+n\n ting: list%5Bs\n@@ -322,12 +322,21 @@\n tr%5D \n-= %5B%5D\n+%7C None = None\n %0A   \n@@ -409,24 +409,25 @@\n   self.__wai\n+n\n ting.append(\n@@ -508,24 +508,25 @@\n d self.__wai\n+n\n ting is not \n@@ -606,16 +606,17 @@\n      wai\n+n\n ting = %22\n@@ -643,16 +643,17 @@\n lf.__wai\n+n\n ting))%0A \n@@ -825,16 +825,17 @@\n a: %5B%7Bwai\n+n\n ting%7D%5D%22%0A\n",
+            "lines": "48"
+        },
+        {
+            "label": "2025-11-11_16-25-44",
+            "content": "@@ -431,32 +431,107 @@\n  __str__(self):%0A\n+        if self.__counters is not None and self.__waiting is not None:%0A    \n         counters\n@@ -570,16 +570,20 @@\n nters))%0A\n+    \n         \n@@ -627,16 +627,35 @@\n aiting))\n+%0A            return\n %0A%0A      \n",
+            "lines": "48"
+        },
+        {
+            "label": "2025-11-11_16-26-42",
+            "content": "@@ -269,32 +269,24 @@\n st%5Bstr%5D = %5B%5D\n- or None\n %0A        sel\n@@ -316,16 +316,8 @@\n = %5B%5D\n- or None\n %0A   \n@@ -443,83 +443,8 @@\n f):%0A\n-        if self.__counters is not None and self.__waiting is not None:%0A    \n     \n@@ -495,20 +495,16 @@\n nters))%0A\n-    \n         \n@@ -548,35 +548,16 @@\n aiting))\n-%0A            return\n %0A%0A      \n",
+            "lines": "46"
+        },
+        {
+            "label": "2025-11-11_16-27-50",
+            "content": "@@ -265,32 +265,40 @@\n : list%5Bstr%5D = %5B%5D\n+ or None\n %0A        self.__\n@@ -320,16 +320,24 @@\n tr%5D = %5B%5D\n+ or None\n %0A       \n@@ -455,25 +455,16 @@\n (self):%0A\n-        %0A\n         \n@@ -466,20 +466,16 @@\n      if \n-not \n self.__c\n@@ -486,16 +486,24 @@\n ers \n-and\n+is\n  not \n+None and \n self\n@@ -516,76 +516,26 @@\n ting\n-:%0A            return f%22Caixas: %5B-----, -----%5D%5CnEspera: %5B%5D%22%0A        %0A\n+ is not None:%0A    \n     \n@@ -594,16 +594,20 @@\n         \n+   \n+ \n waiting \n@@ -644,16 +644,129 @@\n iting))%0A\n+            return%0A%0A        if self.__wainting is None:%0A            return f%22Caixas: %5B-----, -----%5D%5CnEspera: %5B%5D%22%0A\n         \n",
+            "lines": "48"
+        },
+        {
+            "label": "2025-11-11_16-29-56",
+            "content": "@@ -417,30 +417,8 @@\n ente\n-(Cliente(self.__nome))\n )%0A%0A \n",
+            "lines": "47"
+        },
+        {
+            "label": "2025-11-11_16-32-58",
+            "content": "@@ -687,41 +687,8 @@\n str,\n- %5Bcliente.getNomm() for client in\n  sel\n@@ -698,17 +698,16 @@\n _waiting\n-%5D\n ))%0A     \n",
+            "lines": "47"
+        },
+        {
+            "label": "2025-11-11_16-34-46",
+            "content": "@@ -675,32 +675,65 @@\n  %22.join(map(str,\n+ %5Bcliente.getNomm() for client in\n  self.__waiting)\n@@ -731,16 +731,17 @@\n _waiting\n+%5D\n ))%0A     \n",
+            "lines": "47"
+        },
+        {
+            "label": "2025-11-11_16-40-27",
+            "content": "@@ -413,16 +413,38 @@\n (cliente\n+(Cliente(self.__nome))\n )%0A%0A    d\n@@ -1029,78 +1029,8 @@\n a)%0A%0A\n-        elif args%5B0%5D == %22arrive%22:%0A            budega.arrive(args%5B1%5D)%0A%0A\n main\n",
+            "lines": "47"
+        },
+        {
+            "label": "2025-11-11_16-43-27",
+            "content": "@@ -627,30 +627,8 @@\n ers)\n- else %5B%22-----, -----%22%5D\n )%0A  \n",
+            "lines": "50"
+        },
+        {
+            "label": "2025-11-11_16-44-33",
+            "content": "@@ -627,26 +627,8 @@\n ers)\n-if self.__counters\n  els\n",
+            "lines": "50"
+        },
+        {
+            "label": "2025-11-11_16-45-31",
+            "content": "@@ -623,16 +623,56 @@\n ounters)\n+if self.__counters else %5B%22-----, -----%22%5D\n )%0A      \n",
+            "lines": "50"
+        },
+        {
+            "label": "2025-11-11_16-45-42",
+            "content": "@@ -483,10 +483,11 @@\n ers \n-or\n+and\n  not\n",
+            "lines": "50"
+        },
+        {
+            "label": "2025-11-11_16-46-33",
+            "content": "@@ -452,120 +452,8 @@\n    %0A\n-        if not self.__counters and not self.__waiting:%0A            return f%22Caixas: %5B-----, -----%5D%5CnEspera: %5B%5D%22%0A\n     \n",
+            "lines": "50"
+        },
+        {
+            "label": "2025-11-11_16-47-02",
+            "content": "@@ -560,16 +560,127 @@\n ra: %5B%5D%22%0A\n+        if not self.__counters or not self.__waiting:%0A            return f%22Caixas: %5B-----, -----%5D%5CnEspera: %5B%5D%22%0A\n         \n",
+            "lines": "52"
+        },
+        {
+            "label": "2025-11-11_16-47-58",
+            "content": "@@ -420,297 +420,8 @@\n e)%0A%0A\n-    def call(self, index: int) -%3E int %7C None:%0A        if self.__waiting is None:%0A            print(%22fail: sem clientes%22)%0A            return%0A%0A        if self.__counters is not None:%0A            print(%22fail: caixa ocupado%22)%0A            return%0A        %0A        self.__counters.append(index)%0A%0A\n     \n",
+            "lines": "50"
+        },
+        {
+            "label": "2025-11-11_16-59-01",
+            "content": "@@ -709,139 +709,8 @@\n x)%0A%0A\n-    def finish(self, index: int) -%3E Cliente %7C None:%0A        if index is None:%0A            print(%22fail: caixa vazio%22)%0A            %0A%0A\n     \n",
+            "lines": "61"
+        },
+        {
+            "label": "2025-11-15_11-48-47",
+            "content": "@@ -1022,50 +1022,16 @@\n oin(\n-%5B%22-----%22 if x is None else str(x) for x in\n+map(str,\n  sel\n@@ -1042,17 +1042,17 @@\n counters\n-%5D\n+)\n )%0A      \n@@ -1077,24 +1077,16 @@\n oin(\n-%5Bstr(x) for x in\n+map(str,\n  sel\n@@ -1096,17 +1096,17 @@\n _waiting\n-%5D\n+)\n )%0A      \n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-15_11-57-52",
+            "content": "@@ -851,32 +851,162 @@\n  __str__(self):%0A\n+        %0A        if not self.__counters and not self.__waiting:%0A            return f%22Caixas: %5B-----, -----%5D%5CnEspera: %5B%5D%22%0A        %0A\n         counters\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-15_11-58-12",
+            "content": "@@ -863,48 +863,8 @@\n f):%0A\n-        self.__counters = %5BNone, None%5D%0A%0A\n     \n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-15_12-00-25",
+            "content": "@@ -316,95 +316,8 @@\n = %5B%5D\n-%0A%0A    def enter(self, cliente: Cliente) -%3E str:%0A        self.__counters.append(cliente)\n %0A   \n@@ -484,30 +484,18 @@\n f.__\n-counters%5Bindex%5D is not\n+waiting is\n  Non\n@@ -526,21 +526,20 @@\n il: \n-caixa ocupado\n+sem clientes\n %22)%0A \n@@ -552,32 +552,24 @@\n      return%0A\n-        \n %0A        if \n@@ -587,18 +587,15 @@\n ters\n-%5Bindex%5D is\n+ is not\n  Non\n@@ -618,36 +618,37 @@\n rint(%22fail: \n-sem clientes\n+caixa ocupado\n %22)%0A         \n@@ -661,100 +661,8 @@\n urn%0A\n-        %0A        self.__counters%5Bindex%5D = self.__waiting%5B0%5D%0A        del self.__waiting%5B0%5D%0A%0A%0A\n     \n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-15_14-25-03",
+            "content": "@@ -553,131 +553,8 @@\n ne:%0A\n-        if index %3C 0 or index %3E= len(self.__counters):%0A            print(%22indice inexistente%22)%0A            return%0A        %0A\n     \n@@ -980,244 +980,55 @@\n dex \n-%3C 0 or index %3E= len(self.__counters):%0A            print(%22indice inexistente%22)%0A            return%0A        if self.__counters%5Bindex%5D is None:%0A            print(%22fail: sem clientes%22)%0A            return%0A        self.__counters%5Bindex%5D = None\n+is None:%0A            print(%22fail: caixa vazio%22)\n %0A   \n",
+            "lines": "72"
+        },
+        {
+            "label": "2025-11-15_14-31-42",
+            "content": "@@ -1963,78 +1963,8 @@\n %5D)%0A%0A\n-        elif args%5B0%5D == %22finish%22:%0A            budega.finish(args%5B1%5D)%0A%0A\n main\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-15_14-32-36",
+            "content": "@@ -314,16 +314,111 @@\n %5D = %5B%5D%0A%0A\n+    def enter(self, cliente: Cliente) -%3E str:%0A        self.__counters.append(cliente)%0A        %0A\n     def \n@@ -1961,82 +1961,8 @@\n %5B1%5D)\n-%0A        %0A        elif args%5B0%5D == %22call%22:%0A            budega.call(args%5B1%5D)\n %0A%0A  \n",
+            "lines": "84"
+        },
+        {
+            "label": "2025-11-15_14-33-33",
+            "content": "@@ -438,16 +438,30 @@\n ex: int)\n+ -%3E int %7C None\n :%0A      \n",
+            "lines": "84"
+        },
+        {
+            "label": "2025-11-15_14-34-18",
+            "content": "@@ -694,32 +694,38 @@\n  if \n-len(\n self.__\n-waiting) == 0\n+counters%5Bindex%5D is None\n :%0A  \n@@ -1102,32 +1102,38 @@\n  if \n-len(\n self.__\n-waiting) == 0\n+counters%5Bindex%5D is None\n :%0A  \n",
+            "lines": "84"
+        },
+        {
+            "label": "2025-11-15_14-38-54",
+            "content": "@@ -1244,32 +1244,72 @@\n  __str__(self):%0A\n+        self.__counters = %5BNone, None%5D%0A%0A\n         counters\n",
+            "lines": "84"
+        },
+        {
+            "label": "2025-11-15_14-40-07",
+            "content": "@@ -1256,48 +1256,8 @@\n f):%0A\n-        self.__counters = %5BNone, None%5D%0A%0A\n     \n@@ -1862,28 +1862,24 @@\n ga.call(\n-int(\n args%5B1%5D)\n )%0A%0A     \n@@ -1870,17 +1870,16 @@\n args%5B1%5D)\n-)\n %0A%0A      \n@@ -1936,20 +1936,16 @@\n ish(\n-int(\n args%5B1%5D)\n )%0A%0Am\n@@ -1940,17 +1940,16 @@\n args%5B1%5D)\n-)\n %0A%0Amain()\n",
+            "lines": "82"
+        },
+        {
+            "label": "2025-11-15_14-41-22",
+            "content": "@@ -1244,32 +1244,72 @@\n  __str__(self):%0A\n+        self.__counters = %5BNone, None%5D%0A%0A\n         counters\n",
+            "lines": "84"
+        },
+        {
+            "label": "2025-11-15_14-41-38",
+            "content": "@@ -235,26 +235,8 @@\n self\n-, numCounters: int\n ):%0A \n@@ -268,108 +268,18 @@\n ist%5B\n-Cliente %7C None\n+str\n %5D = %5B%5D%0A\n-        for _ in range (numCounters):%0A            self.__counters.append(None)%0A\n     \n@@ -307,23 +307,19 @@\n ist%5B\n-Cliente\n+str\n %5D = %5B%5D%0A%0A\n %0A   \n@@ -314,17 +314,16 @@\n %5D = %5B%5D%0A%0A\n-%0A\n     def \n",
+            "lines": "82"
+        },
+        {
+            "label": "2025-11-15_14-48-49",
+            "content": "@@ -207,17 +207,16 @@\n  Market(\n-1\n ):%0A    d\n",
+            "lines": "85"
+        },
+        {
+            "label": "2025-11-15_14-49-14",
+            "content": "@@ -207,16 +207,17 @@\n  Market(\n+1\n ):%0A    d\n@@ -1635,17 +1635,16 @@\n  Market(\n-1\n )%0A%0A    w\n",
+            "lines": "85"
+        },
+        {
+            "label": "2025-11-15_14-49-37",
+            "content": "@@ -1638,9 +1638,9 @@\n ket(\n-2\n+1\n )%0A%0A \n",
+            "lines": "85"
+        },
+        {
+            "label": "2025-11-15_14-49-43",
+            "content": "@@ -1634,16 +1634,17 @@\n  Market(\n+2\n )%0A%0A    w\n@@ -1845,76 +1845,8 @@\n ga)%0A\n-        elif args%5B0%5D == %22init%22:%0A            budega.__init__(args%5B1%5D)\n %0A   \n",
+            "lines": "85"
+        },
+        {
+            "label": "2025-11-15_14-52-02",
+            "content": "@@ -1840,16 +1840,84 @@\n budega)%0A\n+        elif args%5B0%5D == %22init%22:%0A            budega.__init__(args%5B1%5D)\n %0A       \n@@ -2137,97 +2137,8 @@\n ))%0A%0A\n-        elif args%5B0%5D == %22init%22:%0A            budega = Market(numCounters=(int(args%5B1%5D)))%0A%0A\n main\n",
+            "lines": "86"
+        },
+        {
+            "label": "2025-11-15_14-53-44",
+            "content": "@@ -2065,16 +2065,104 @@\n s%5B1%5D))%0A%0A\n+        elif args%5B0%5D == %22init%22:%0A            budega = Market(numCounters=(int(args%5B1%5D)))%0A\n %0Amain()%0A\n",
+            "lines": "88"
+        },
+        {
+            "label": "2025-11-15_14-54-34",
+            "content": "@@ -1627,20 +1627,24 @@\n udega = \n-None\n+Market()\n %0A%0A    wh\n@@ -1784,82 +1784,8 @@\n reak\n-%0A        elif args%5B0%5D == %22init%22:%0A            budega = Market(int(args%5B1%5D))\n %0A%0A  \n",
+            "lines": "86"
+        },
+        {
+            "label": "2025-11-15_14-55-33",
+            "content": "@@ -944,16 +944,19 @@\n _waiting\n+%5B0%5D\n %0A       \n",
+            "lines": "88"
+        },
+        {
+            "label": "2025-11-15_14-58-34",
+            "content": "@@ -944,19 +944,16 @@\n _waiting\n-%5B0%5D\n %0A       \n",
+            "lines": "88"
+        },
+        {
+            "label": "2025-11-15_14-58-57",
+            "content": "@@ -6,16 +6,18 @@\n  Cliente\n+()\n :%0A    de\n@@ -73,16 +73,71 @@\n = nome%0A%0A\n+    def getNome(self):%0A        return self.__nome%0A    %0A\n     def \n@@ -158,32 +158,41 @@\n %0A        return \n+f%22Nome: %7B\n self.__nome%0A%0A%0Acl\n@@ -186,18 +186,23 @@\n f.__nome\n-%0A%0A\n+%7D%22%0A    \n %0Aclass M\n@@ -206,16 +206,18 @@\n s Market\n+()\n :%0A    de\n@@ -279,31 +279,114 @@\n ters\n- = %5BNone%5D * numCounters\n+: list%5BCliente %7C None%5D = %5B%5D%0A        for _ in range (numCounters):%0A            self.__counters.append(None)\n %0A   \n@@ -408,15 +408,31 @@\n ting\n+: list%5BCliente%5D\n  = %5B%5D%0A%0A\n+%0A\n     \n@@ -444,34 +444,55 @@\n rrive(self, \n-nome: str)\n+cliente: Cliente) -%3E str %7C None\n :%0A        se\n@@ -515,21 +515,15 @@\n end(\n-C\n+c\n liente\n-(nome)\n )%0A%0A \n@@ -623,35 +623,30 @@\n      print(%22\n-fail: caixa\n+indice\n  inexistente\n@@ -948,14 +948,89 @@\n ting\n-.pop(0\n+%5B0%5D%0A        del self.__waiting%5B0%5D%0A%0A%0A        %0A        self.__counters.append(index\n )%0A%0A \n@@ -1052,32 +1052,50 @@\n elf, index: int)\n+ -%3E Cliente %7C None\n :%0A        if ind\n@@ -1154,27 +1154,22 @@\n  print(%22\n-fail: caixa\n+indice\n  inexist\n@@ -1206,50 +1206,35 @@\n     \n-%0A        if self.__counters%5Bindex%5D is None\n+if len(self.__waiting) == 0\n :%0A  \n@@ -1260,19 +1260,20 @@\n il: \n-caixa vazio\n+sem clientes\n %22)%0A \n@@ -1286,33 +1286,24 @@\n      return%0A\n-        %0A\n         self\n@@ -1323,24 +1323,37 @@\n ndex%5D = None\n+%0A            \n %0A%0A    def __\n@@ -1517,16 +1517,25 @@\n iting%5D)%0A\n+        %0A\n         \n@@ -1586,16 +1586,30 @@\n ting%7D%5D%22%0A\n+        %0A%0A    \n %0A%0Adef ma\n@@ -1724,16 +1724,19 @@\n e.split(\n+%22 %22\n )%0A%0A     \n@@ -1777,25 +1777,16 @@\n   break%0A\n-        %0A\n         \n@@ -2143,8 +2143,15 @@\n %0Amain()%0A\n+       \n",
+            "lines": "88"
+        },
+        {
+            "label": "2025-11-15_15-04-15",
+            "content": "@@ -5,16 +5,17 @@\n s Client\n+e\n :%0A    de\n@@ -12,31 +12,32 @@\n te:%0A    def \n+_\n _init_\n- \n+_\n (self, nome:\n@@ -62,21 +62,16 @@\n f.__nome\n-: str\n  = nome%0A\n@@ -84,73 +84,14 @@\n ef _\n-str_ (self):%0A        return f%22%7Bself.__nome%7D%22%0A%0A    def getCliente \n+_str__\n (sel\n@@ -149,27 +149,33 @@\n def \n+_\n _init_\n- \n+_\n (self, \n-caixa\n+numCounter\n s: i\n@@ -192,24 +192,26 @@\n    self.\n+__\n counters\n : list%5BC\n@@ -206,105 +206,93 @@\n ters\n-: list%5BClient %7C None%5D = %5B%5D%0A        for i in range(caixas):%0A            self.counters.append(None)\n+ = %5BNone%5D * numCounters%0A        self.__waiting = %5B%5D%0A%0A    def arrive(self, nome: str):\n %0A   \n@@ -305,146 +305,125 @@\n elf.\n+__\n wai\n-n\n ting\n-: list%5BClient%5D = %5B%5D%0A    %0A    def _str_ (self):%0A        caixas = %22, %22.join(%5B%22-----%22 if x == None else str(x) for x in \n+.append(Cliente(nome))%0A%0A    def call(self, index: int):%0A        if index %3C 0 or index %3E= len(\n self.\n+__\n counters\n %5D)%0A \n@@ -418,18 +418,18 @@\n counters\n-%5D\n )\n+:\n %0A       \n@@ -433,262 +433,118 @@\n     \n-espera = %22, %22.join(%5Bstr(x) for x in self.wainting%5D)%0A        return f%22Caixas: %5B%7Bcaixas%7D%5D%5CnEspera: %5B%7Bespera%7D%5D%22%0A    %0A    def arrive (self, pessoa: Client):%0A        self.wainting.append(pessoa)%0A%0A    def call (self, index: int):%0A        if self.wainting == %5B%5D\n+    print(%22fail: caixa inexistente%22)%0A            return%0A        %0A        if self.__counters%5Bindex%5D is not None\n :%0A  \n@@ -570,20 +570,21 @@\n il: \n-sem clientes\n+caixa ocupado\n %22)%0A \n@@ -613,39 +613,44 @@\n     \n-if self.counters%5Bindex%5D != None\n+%0A        if len(self.__waiting) == 0\n :%0A  \n@@ -668,37 +668,36 @@\n rint(%22fail: \n-caixa ocupado\n+sem clientes\n %22)%0A         \n@@ -698,32 +698,41 @@\n          return%0A\n+        %0A\n         self.cou\n@@ -720,32 +720,34 @@\n   %0A        self.\n+__\n counters%5Bindex%5D \n@@ -757,54 +757,25 @@\n elf.\n+__\n wai\n-n\n ting\n-%5B0%5D%0A        del self.wainting %5B0%5D%0A    \n+.pop(0)%0A\n %0A   \n@@ -785,17 +785,16 @@\n f finish\n- \n (self, i\n@@ -843,24 +843,26 @@\n %3E= len(self.\n+__\n counters):%0A \n@@ -916,32 +916,41 @@\n          return%0A\n+        %0A\n         if self.\n@@ -945,24 +945,26 @@\n     if self.\n+__\n counters%5Bind\n@@ -967,18 +967,18 @@\n %5Bindex%5D \n-==\n+is\n  None:%0A \n@@ -1026,32 +1026,41 @@\n          return%0A\n+        %0A\n         self.cou\n@@ -1056,16 +1056,18 @@\n    self.\n+__\n counters\n@@ -1086,60 +1086,120 @@\n ne%0A%0A\n-def main():%0A    budega = Market (0)%0A%0A    while True:\n+    def __str__(self):%0A        counters = %22, %22.join(%5B%22-----%22 if x is None else str(x) for x in self.__counters%5D)\n %0A   \n@@ -1207,89 +1207,246 @@\n     \n-line = input()%0A        args: list%5Bstr%5D = line.split(%22 %22)%0A        print(%22$%22 + line\n+waiting = %22, %22.join(%5Bstr(x) for x in self.__waiting%5D)%0A        return f%22Caixas: %5B%7Bcounters%7D%5D%5CnEspera: %5B%7Bwaiting%7D%5D%22%0A%0A%0Adef main():%0A    budega = None%0A%0A    while True:%0A        line = input()%0A        print(%22$%22 + line)%0A        args = line.split(\n )%0A%0A \n@@ -1455,25 +1455,24 @@\n      if args\n- \n %5B0%5D == %22end%22\n@@ -1491,16 +1491,25 @@\n   break%0A\n+        %0A\n         \n@@ -1517,25 +1517,24 @@\n lif args\n- \n %5B0%5D == %22\n show%22:%0A \n@@ -1529,12 +1529,12 @@\n == %22\n-show\n+init\n %22:%0A \n@@ -1548,21 +1548,38 @@\n     \n-print(budega)\n+budega = Market(int(args%5B1%5D))%0A\n %0A   \n@@ -1592,25 +1592,24 @@\n lif args\n- \n %5B0%5D == %22\n init%22:%0A \n@@ -1592,36 +1592,36 @@\n lif args%5B0%5D == %22\n-init\n+show\n %22:%0A            c\n@@ -1623,63 +1623,22 @@\n     \n-caixas = int(args%5B1%5D)%0A            budega._init_(caixas)\n+print(budega)%0A\n %0A   \n@@ -1643,33 +1643,32 @@\n        elif args\n- \n %5B0%5D == %22arrive%22:\n@@ -1684,24 +1684,30 @@\n     \n-pessoa = \n+budega.arrive(\n args%5B1%5D\n+)\n %0A   \n@@ -1715,33 +1715,8 @@\n     \n-    budega.arrive(pessoa)\n %0A   \n@@ -1721,33 +1721,32 @@\n        elif args\n- \n %5B0%5D == %22call%22:%0A \n@@ -1760,57 +1760,34 @@\n     \n-fila = int(args%5B1%5D)%0A            budega.call(fila)\n+budega.call(int(args%5B1%5D))%0A\n %0A   \n@@ -1800,17 +1800,16 @@\n lif args\n- \n %5B0%5D == %22\n@@ -1821,45 +1821,8 @@\n h%22:%0A\n-            finalizar = int(args%5B1%5D)%0A\n     \n@@ -1847,82 +1847,26 @@\n ish(\n-f\n in\n-alizar)%0A        else:  %0A            print(%22fail: comando invalido%22)\n+t(args%5B1%5D))%0A\n %0A%0Amain()\n@@ -1861,12 +1861,13 @@\n %5D))%0A%0A%0Amain()\n+%0A\n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-15_15-16-18",
+            "content": "@@ -1334,17 +1334,19 @@\n = Market\n-(\n+ (0\n )%0A%0A    w\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-15_15-17-45",
+            "content": "@@ -9,11 +9,8 @@\n ient\n-e()\n :%0A  \n@@ -11,32 +11,31 @@\n nt:%0A    def \n-_\n _init_\n-_\n+ \n (self, nome:\n@@ -60,16 +60,21 @@\n f.__nome\n+: str\n  = nome%0A\n@@ -86,15 +86,14 @@\n def \n-getNome\n+_str_ \n (sel\n@@ -111,16 +111,19 @@\n  return \n+f%22%7B\n self.__n\n@@ -125,21 +125,19 @@\n f.__nome\n-%0A    \n+%7D%22%0A\n %0A    def\n@@ -129,39 +129,43 @@\n nome%7D%22%0A%0A    def \n-__str__\n+getCliente \n (self):%0A        \n@@ -175,17 +175,8 @@\n urn \n-f%22Nome: %7B\n self\n@@ -186,15 +186,10 @@\n nome\n-%7D%22%0A    \n+%0A%0A\n %0Acla\n@@ -197,18 +197,16 @@\n s Market\n-()\n :%0A    de\n@@ -211,33 +211,27 @@\n def \n-_\n _init_\n-_\n+ \n (self, \n-numCounter\n+caixa\n s: i\n@@ -240,34 +240,32 @@\n ):%0A        self.\n-__\n counters: list%5BC\n@@ -265,25 +265,24 @@\n  list%5BClient\n-e\n  %7C None%5D = %5B\n@@ -295,17 +295,17 @@\n     for \n-_\n+i\n  in rang\n@@ -309,20 +309,14 @@\n ange\n- (numCounter\n+(caixa\n s):%0A\n@@ -324,34 +324,32 @@\n            self.\n-__\n counters.append(\n@@ -363,29 +363,28 @@\n        self.\n-__\n wai\n+n\n ting: list%5BC\n@@ -392,17 +392,19 @@\n ient\n-e\n %5D = %5B%5D%0A\n-%0A\n+    \n %0A   \n@@ -412,294 +412,370 @@\n def \n-arrive(self, cliente: Cliente) -%3E str %7C None:%0A        self.__waiting.append(cliente)%0A%0A    def call(self, index: int):%0A        if index %3C 0 or index %3E= len(self.__counters):\n+_str_ (self):%0A        caixas = %22, %22.join(%5B%22-----%22 if x == None else str(x) for x in self.counters%5D)%0A        espera = %22, %22.join(%5Bstr(x) for x in self.wainting%5D)%0A        return f%22Caixas: %5B%7Bcaixas%7D%5D%5CnEspera: %5B%7Bespera%7D%5D%22\n %0A    \n+%0A\n     \n-    print(%22indice inexistente%22)%0A            return%0A        %0A        if self.__counters%5Bindex%5D is not None\n+def arrive (self, pessoa: Client):%0A        self.wainting.append(pessoa)%0A%0A    def call (self, index: int):%0A        if self.wainting == %5B%5D\n :%0A  \n@@ -801,21 +801,20 @@\n il: \n-caixa ocupado\n+sem clientes\n %22)%0A \n@@ -843,44 +843,39 @@\n     \n-%0A        if len(self.__waiting) == 0\n+if self.counters%5Bindex%5D != None\n :%0A  \n@@ -893,36 +893,37 @@\n rint(%22fail: \n-sem clientes\n+caixa ocupado\n %22)%0A         \n@@ -932,25 +932,16 @@\n  return%0A\n-        %0A\n         \n@@ -937,34 +937,32 @@\n rn%0A        self.\n-__\n counters%5Bindex%5D \n@@ -964,29 +964,28 @@\n dex%5D = self.\n-__\n wai\n+n\n ting%5B0%5D%0A    \n@@ -1001,70 +1001,25 @@\n elf.\n-__\n wai\n+n\n ting\n+ \n %5B0%5D%0A\n-%0A%0A \n     \n-   %0A        self.__counters.append(index)%0A\n %0A   \n@@ -1029,16 +1029,17 @@\n f finish\n+ \n (self, i\n@@ -1052,26 +1052,8 @@\n int)\n- -%3E Cliente %7C None\n :%0A  \n@@ -1088,26 +1088,24 @@\n %3E= len(self.\n-__\n counters):%0A \n@@ -1126,14 +1126,19 @@\n nt(%22\n-indice\n+fail: caixa\n  ine\n@@ -1182,32 +1182,36 @@\n  if \n-len(\n self.\n-__waiting) == 0\n+counters%5Bindex%5D == None\n :%0A  \n@@ -1229,36 +1229,35 @@\n rint(%22fail: \n-sem clientes\n+caixa vazio\n %22)%0A         \n@@ -1275,26 +1275,24 @@\n        self.\n-__\n counters%5Bind\n@@ -1305,281 +1305,8 @@\n None\n-%0A            %0A%0A    def __str__(self):%0A        counters = %22, %22.join(%5B%22-----%22 if x is None else str(x) for x in self.__counters%5D)%0A        waiting = %22, %22.join(%5Bstr(x) for x in self.__waiting%5D)%0A        %0A        return f%22Caixas: %5B%7Bcounters%7D%5D%5CnEspera: %5B%7Bwaiting%7D%5D%22%0A        %0A%0A    \n %0A%0Ade\n@@ -1328,20 +1328,24 @@\n udega = \n-None\n+Market()\n %0A%0A    wh\n@@ -1389,55 +1389,66 @@\n     \n-print(%22$%22 + line)%0A        args = line.split(%22 %22\n+args: list%5Bstr%5D = line.split(%22 %22)%0A        print(%22$%22 + line\n )%0A%0A \n@@ -1457,24 +1457,25 @@\n      if args\n+ \n %5B0%5D == %22end%22\n@@ -1511,24 +1511,25 @@\n lif args\n+ \n %5B0%5D == %22\n init%22:%0A \n@@ -1520,20 +1520,20 @@\n %5B0%5D == %22\n-init\n+show\n %22:%0A     \n@@ -1543,38 +1543,21 @@\n     \n-budega = Market(int(args%5B1%5D))%0A\n+print(budega)\n %0A   \n@@ -1570,24 +1570,25 @@\n lif args\n+ \n %5B0%5D == %22\n show%22:%0A \n@@ -1571,36 +1571,36 @@\n if args %5B0%5D == %22\n-show\n+init\n %22:%0A            p\n@@ -1598,30 +1598,71 @@\n         \n-print(budega)%0A\n+caixas = int(args%5B1%5D)%0A            budega._init_(caixas)\n %0A       \n@@ -1663,32 +1663,33 @@\n        elif args\n+ \n %5B0%5D == %22arrive%22:\n@@ -1705,39 +1705,35 @@\n     \n-budega.arrive(\n+pessoa = \n args%5B1%5D\n-)\n %0A\n+  \n         \n %0A   \n@@ -1724,24 +1724,47 @@\n %5D%0A          \n+  budega.arrive(pessoa)\n %0A        eli\n@@ -1761,32 +1761,33 @@\n        elif args\n+ \n %5B0%5D == %22call%22:%0A \n@@ -1801,35 +1801,58 @@\n     \n-budega.call(int(args%5B1%5D)\n+fila = int(args%5B1%5D)%0A            budega.call(fila\n )%0A\n-%0A\n     \n@@ -1864,16 +1864,17 @@\n lif args\n+ \n %5B0%5D == %22\n@@ -1898,22 +1898,20 @@\n     \n-budega.finish(\n+finalizar = \n int(\n@@ -1922,18 +1922,113 @@\n %5B1%5D)\n-)\n %0A\n+            budega.finish(finalizar)%0A        else:  %0A            print(%22fail: comando invalido%22)\n %0A%0Amain()\n %0A   \n@@ -2023,16 +2023,8 @@\n %0A%0Amain()\n-%0A       \n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-15_15-21-13",
+            "content": "@@ -465,18 +465,32 @@\n Cliente)\n+ -%3E str %7C None\n :%0A\n-\n         \n@@ -979,16 +979,65 @@\n ing%5B0%5D%0A%0A\n+%0A        %0A        self.__counters.append(index)%0A%0A\n     def \n@@ -1517,16 +1517,25 @@\n iting%5D)%0A\n+        %0A\n         \n@@ -1596,16 +1596,21 @@\n       %0A%0A\n+    %0A\n %0Adef mai\n",
+            "lines": "88"
+        },
+        {
+            "label": "2025-11-15_15-25-18",
+            "content": "@@ -1095,19 +1095,14 @@\n nt(%22\n-fail: caoxa\n+indice\n  ine\n@@ -1153,24 +1153,23 @@\n (self.__\n-counters\n+waiting\n ) == 0:%0A\n@@ -1197,19 +1197,20 @@\n il: \n-caixa vazio\n+sem clientes\n %22)%0A \n",
+            "lines": "82"
+        },
+        {
+            "label": "2025-11-15_15-27-13",
+            "content": "@@ -2066,75 +2066,8 @@\n %5D))%0A\n-        %0A        else:%0A            print(%22fail: comando invalido%22)%0A\n %0A%0Ama\n",
+            "lines": "82"
+        },
+        {
+            "label": "2025-11-15_15-34-25",
+            "content": "@@ -165,16 +165,24 @@\n   return\n+ f%22Nome:\n  %7Bself._\n@@ -187,16 +187,17 @@\n .__nome%7D\n+%22\n %0A    %0Acl\n",
+            "lines": "85"
+        },
+        {
+            "label": "2025-11-15_15-44-10",
+            "content": "@@ -1868,39 +1868,8 @@\n e%22:%0A\n-            pessoa = (args%5B1%5D)%0A\n     \n@@ -1894,14 +1894,15 @@\n ive(\n-pessoa\n+args%5B1%5D\n )%0A  \n",
+            "lines": "85"
+        },
+        {
+            "label": "2025-11-15_15-46-10",
+            "content": "@@ -158,32 +158,33 @@\n %0A        return \n+%7B\n self.__nome%0A    \n@@ -174,24 +174,25 @@\n %7Bself.__nome\n+%7D\n %0A    %0Aclass \n@@ -1090,17 +1090,17 @@\n fail: ca\n-i\n+o\n xa inexi\n@@ -1130,32 +1130,36 @@\n turn%0A        if \n+len(\n self.__counters%5B\n@@ -1161,23 +1161,14 @@\n ters\n-%5Bindex%5D == None\n+) == 0\n :%0A  \n",
+            "lines": "86"
+        },
+        {
+            "label": "2025-11-15_15-48-12",
+            "content": "class Cliente():\n    def __init__(self, nome: str):\n        self.__nome = nome\n\n    def getNome(self):\n        return self.__nome\n    \n    def __str__(self):\n        return self.__nome\n    \nclass Market():\n    def __init__(self, numCounters: int):\n        self.__counters: list[Cliente | None] = []\n        for _ in range (numCounters):\n            self.__counters.append(None)\n        self.__waiting: list[Cliente] = []\n\n\n    def arrive(self, cliente: Cliente):\n        self.__waiting.append(cliente)\n\n    def call(self, index: int):\n        if index < 0 or index >= len(self.__counters):\n            print(\"indice inexistente\")\n            return\n        \n        if self.__counters[index] is not None:\n            print(\"fail: caixa ocupado\")\n            return\n        \n        if len(self.__waiting) == 0:\n            print(\"fail: sem clientes\")\n            return\n        \n        self.__counters[index] = self.__waiting[0]\n        del self.__waiting[0]\n\n    def finish(self, index: int) -> Cliente | None:\n        if index < 0 or index >= len(self.__counters):\n            print(\"fail: caixa inexistente\")\n            return\n        if self.__counters[index] == None:\n            print(\"fail: caixa vazio\")\n            return\n        self.__counters[index] = None\n            \n\n    def __str__(self):\n        counters = \", \".join([\"-----\" if x is None else str(x) for x in self.__counters])\n        waiting = \", \".join([str(x) for x in self.__waiting])\n        return f\"Caixas: [{counters}]\\nEspera: [{waiting}]\"\n        \n\n\ndef main():\n    budega = None\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"init\":\n            budega = Market(int(args[1]))\n\n        elif args[0] == \"show\":\n            print(budega)\n\n        elif args[0] == \"arrive\":\n            pessoa = (args[1])\n            budega.arrive(pessoa)\n        \n        elif args[0] == \"call\":\n            budega.call(int(args[1]))\n\n        elif args[0] == \"finish\":\n            budega.finish(int(args[1]))\n        \n        else:\n            print(\"fail: comando invalido\")\n\n\nmain()\n       ",
+            "lines": "86"
+        }
+    ]
+}

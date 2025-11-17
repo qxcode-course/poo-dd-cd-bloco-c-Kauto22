@@ -1,0 +1,32 @@
+version: '0.2'
+sources:
+- database: local
+  link: ''
+  type: local
+  branch: master
+  cache_path: ''
+  cache_timestamp: ''
+  filters: null
+- database: poo
+  link: C:\Users\Kakau\Documents\VS Code\Introdução a Programação para Design\POO_Aulas\poo-dd-cd-bloco-c-Kauto22\myrep\.tko\cache\poo\Readme.md
+  type: clone
+  branch: master
+  cache_path: C:\Users\Kakau\Documents\VS Code\Introdução a Programação para Design\POO_Aulas\poo-dd-cd-bloco-c-Kauto22\myrep\.tko\cache\poo\Readme.md
+  cache_timestamp: '2025-11-16 15:07:31'
+  filters:
+  - listas
+expanded:
+- poo@bloco_c-listas
+- poo@campanha-principal
+- poo@bloco_c-listas
+tasks:
+  poo@budega: '{rate:100, human:s, iagen:s, guide:s, alone:9, study:240}'
+  poo@pula-pula: '{rate:100, iagen:s, guide:s, alone:8, study:150}'
+flags:
+  quests: 1
+  tracks: 0
+  tasks: 0
+  graph: 1
+  xray: 0
+lang: py
+selected: poo@cinema

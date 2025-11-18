@@ -1,0 +1,234 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-18_09-58-05",
+            "content": "@@ -1,568 +0,0 @@\n-class Lead:%0A    def __init__(self, thickness: float, hardness: str, size: int):%0A        self.__thickness = thickness%0A        self.__hardness = hardness%0A        self.__size = size%0A%0A    def getThickness(self):%0A        return self.__thickness%0A    %0A    def getHardness(self):%0A        return self.__hardness%0A    %0A    def getSize(self):%0A        return self.__size%0A    %0A    def setSize(self, value: int):%0A        self.__size = value%0A%0A    def usagePerSheet(self) -%3E int:%0A        gasto = %7B%221B%22: 1, %222B%22: 2, %223B%22:3, %224B%22:4, %226B%22:6%7D%0A        return gasto%5Bself.__hardness%5D%0A        \n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-11-18_10-08-54",
+            "content": "@@ -561,616 +561,8 @@\n     \n-%0A\n     \n-def __str__(self):%0A        return f%22%5B%7Bself.__thickness%7D:%7Bself.__hardness%7D:%7Bself.__size%7D%5D%22%0A    %0Aclass Pencil:%0A    def __init__(self, thickness: float):%0A        self.__thickness = thickness%0A        self.__tip: Lead %7C None = None%0A%0A    def getLead(self):%0A        return self.__tip%0A    %0A    def setLead(self, value: Lead):%0A        self.__tip = value%0A%0A%0A%0A%0A%0Adef main()%0A    pencil = Pencil %7C None = None%0A    while True:%0A        line = input()%0A        print(%22$%22 + line)%0A        args = line.split(%22 %22)%0A%0A        if args%5B0%5D == %22end%22:%0A            break%0A        else:%0A            print(%22comando invalido%22)%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0Amain()\n",
+            "lines": "22"
+        },
+        {
+            "label": "2025-11-18_10-14-37",
+            "content": "@@ -922,17 +922,16 @@\n f main()\n-:\n %0A    pen\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-18_10-15-02",
+            "content": "@@ -1106,66 +1106,8 @@\n eak%0A\n-%0A        if args%5B0%5D == %22show%22:%0A            print(pencil)%0A%0A\n     \n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-18_10-15-29",
+            "content": "@@ -937,16 +937,31 @@\n encil = \n+Pencil %7C None =\n  None%0A  \n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-18_10-15-47",
+            "content": "@@ -1149,81 +1149,8 @@\n l)%0A%0A\n-        if args%5B0%5D == %22init%22:%0A            pencil = Pencil(int(args%5B1%5D))%0A%0A\n     \n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-18_10-17-10",
+            "content": "@@ -1203,20 +1203,18 @@\n  Pencil(\n-floa\n+in\n t(args%5B1\n",
+            "lines": "69"
+        },
+        {
+            "label": "2025-11-18_10-17-25",
+            "content": "@@ -656,1224 +656,263 @@\n %7D%5D%22%0A\n-%0Aclass Tambor:%0A    def __init__(self, qtd: int):%0A        self.__qtd = list%5BLead %7C None%5D = %5B%5D%0A        for i in range (qtd):%0A            self.__qtd.append(None)%0A    %0A    def __str__(self):%0A        return f%22%7Bself.__qtd%7D%22%0A    %0Aclass Pencil:%0A    def __init__(self, thickness: float):%0A        self.__thickness = thickness%0A        self.__tip: Lead %7C None = None%0A        self.__tambor: Tambor = Tambor%0A%0A    def getTambor(self):%0A        return self.__tambor%0A    %0A    def __str__(self):%0A        if self.__tip == None:%0A            return f%22calibre: %7Bself.__thickness%7D, bico: %5B%5D, tambor: %3C%3E%22%0A        return f%22calibre: %7Bself.__thickness%7D, bico: %5B%5D, tambor: %7Bself.__tambor%7D%22%0A%0A    def getLead(self):%0A        return self.__tip%0A    %0A    def setLead(self, value: Lead):%0A        self.__tip = value%0A%0A    def insert(self, grafite: Lead):%0A        if self.__tip is not None:%0A            print(%22fail ja existe grafite%22)%0A            return%0A        if grafite.getThickness() != self.__thickness:%0A            print(%22fail: calibre incompativel%22)%0A            return%0A        self.__tip = grafite%0A%0A    def remove(self):%0A        if self.__tip == None:%0A            print(%22fail: nao existe grafite%22)%0A            return%0A        self.__tip = None%0A%0A    \n+    %0Aclass Pencil:%0A    def __init__(self, thickness: float):%0A        self.__thickness = thickness%0A        self.__tip: Lead %7C None = None%0A%0A    def getLead(self):%0A        return self.__tip%0A    %0A    def setLead(self, value: Lead):%0A        self.__tip = value%0A\n %0A%0A%0A%0A\n",
+            "lines": "69"
+        },
+        {
+            "label": "2025-11-18_10-32-42",
+            "content": "@@ -2181,16 +2181,68 @@\n s%5B1%5D))%0A%0A\n+        else:%0A            print(%22comando invalido%22)%0A\n %0A%0A%0A%0A%0A%0A%0A%0A\n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-18_10-33-29",
+            "content": "@@ -1,2301 +1,160 @@\n-class Lead:%0A    def __init__(self, thickness: float, hardness: str, size: int):%0A        self.__thickness = thickness%0A        self.__hardness = hardness%0A        self.__size = size%0A%0A    def getThickness(self):%0A        return self.__thickness%0A    %0A    def getHardness(self):%0A        return self.__hardness%0A    %0A    def getSize(self):%0A        return self.__size%0A    %0A    def setSize(self, value: int):%0A        self.__size = value%0A%0A    def usagePerSheet(self) -%3E int:%0A        gasto = %7B%221B%22: 1, %222B%22: 2, %223B%22:3, %224B%22:4, %226B%22:6%7D%0A        return gasto%5Bself.__hardness%5D%0A    %0A    def __str__(self):%0A        return f%22%5B%7Bself.__thickness%7D:%7Bself.__hardness%7D:%7Bself.__size%7D%5D%22%0A%0Aclass Tambor:%0A    def __init__(self, qtd: int):%0A        self.__qtd = list%5BLead %7C None%5D = %5B%5D%0A        for i in range (qtd):%0A            self.__qtd.append(None)%0A    %0A    def __str__(self):%0A        return f%22%7Bself.__qtd%7D%22%0A    %0Aclass Pencil:%0A    def __init__(self, thickness: float):%0A        self.__thickness = thickness%0A        self.__tip: Lead %7C None = None%0A        self.__tambor: Tambor = Tambor%0A%0A    def getTambor(self):%0A        return self.__tambor%0A    %0A    def __str__(self):%0A        if self.__tip == None:%0A            return f%22calibre: %7Bself.__thickness%7D, bico: %5B%5D, tambor: %3C%3E%22%0A        return f%22calibre: %7Bself.__thickness%7D, bico: %5B%5D, tambor: %7Bself.__tambor%7D%22%0A%0A    def getLead(self):%0A        return self.__tip%0A    %0A    def setLead(self, value: Lead):%0A        self.__tip = value%0A%0A    def insert(self, grafite: Lead):%0A        if self.__tip is not None:%0A            print(%22fail ja existe grafite%22)%0A            return%0A        if grafite.getThickness() != self.__thickness:%0A            print(%22fail: calibre incompativel%22)%0A            return%0A        self.__tip = grafite%0A%0A    def remove(self):%0A        if self.__tip == None:%0A            print(%22fail: nao existe grafite%22)%0A            return%0A        self.__tip = None%0A%0A%0A%0A%0Adef main():%0A    pencil =  None%0A    while True:%0A        line = input()%0A        print(%22$%22 + line)%0A        args = line.split(%22 %22)%0A%0A        if args%5B0%5D == %22end%22:%0A            break%0A%0A        if args%5B0%5D == %22show%22:%0A            print(pencil)%0A%0A        if args%5B0%5D == %22init%22:%0A            pencil = Pencil(float(args%5B1%5D))%0A%0A        if args%5B0%5D == %22insert%22:%0A            pencil.insert(Lead(float(args%5B1%5D), args%5B2%5D, int(args%5B3%5D)))%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0Amain()\n+@@ -1864,16 +1864,22 @@%0A = None%250A%250A%0A+    %250A%250A%0A %250A%250A%250Adef m%0A@@ -2185,41 +2185,8 @@%0A ))%250A%250A%0A-        if args%255B0%255D == %2522insert%2522:%250A%250A%0A %250A%250A%250A%250A%0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2025-11-18_10-47-23",
+            "content": "@@ -1667,9 +1667,9 @@\n mpat\n-%C3%AD\n+i\n vel%22\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-18_10-47-39",
+            "content": "@@ -1037,16 +1037,24 @@\n  Tambor \n+= Tambor\n %0A%0A    de\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-18_10-50-55",
+            "content": "@@ -1041,22 +1041,8 @@\n bor \n-= %5Bself.__tip%5D\n %0A%0A  \n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-18_10-51-51",
+            "content": "@@ -1034,27 +1034,14 @@\n or: \n-list%5B\n Tambor\n- %7C None%5D\n  = %5B\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-18_10-52-26",
+            "content": "@@ -1057,83 +1057,8 @@\n  = %5B\n-%5D%0A        for i in range (self.__tambor):%0A            self.__tambor.append(\n self\n@@ -1063,17 +1063,17 @@\n lf.__tip\n-)\n+%5D\n %0A%0A    de\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-18_10-53-50",
+            "content": "@@ -932,35 +932,8 @@\n loat\n- , tambor: InterruptedError\n ):%0A \n@@ -1079,16 +1079,23 @@\n  range (\n+self.__\n tambor):\n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-18_10-54-27",
+            "content": "@@ -2290,21 +2290,8 @@\n %5B1%5D)\n- int(agrs%5B2%5D)\n )%0A%0A \n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-18_10-54-59",
+            "content": "@@ -2286,17 +2286,16 @@\n args%5B1%5D)\n-,\n  int(agr\n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-18_10-55-12",
+            "content": "@@ -2293,18 +2293,18 @@\n ), int(a\n-r\n g\n+r\n s%5B2%5D))%0A%0A\n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-18_10-55-22",
+            "content": "@@ -939,20 +939,30 @@\n tambor: \n-Tamb\n+InterruptedErr\n or):%0A   \n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-18_10-56-35",
+            "content": "@@ -931,19 +931,16 @@\n float , \n-qtd\n tambor: \n@@ -1096,19 +1096,16 @@\n  range (\n-qtd\n tambor):\n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-18_11-04-45",
+            "content": "@@ -2284,16 +2284,19 @@\n gs%5B1%5D), \n+int\n (args%5B2%5D\n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-18_11-05-39",
+            "content": "@@ -2284,19 +2284,16 @@\n gs%5B1%5D), \n-int\n (args%5B2%5D\n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-18_11-06-35",
+            "content": "@@ -1,2429 +1,58 @@\n-class Lead:%0A    def __init__(self, thickness: float, hardness: str, size: int):%0A        self.__thickness = thickness%0A        self.__hardness = hardness%0A        self.__size = size%0A%0A    def getThickness(self):%0A        return self.__thickness%0A    %0A    def getHardness(self):%0A        return self.__hardness%0A    %0A    def getSize(self):%0A        return self.__size%0A    %0A    def setSize(self, value: int):%0A        self.__size = value%0A%0A    def usagePerSheet(self) -%3E int:%0A        gasto = %7B%221B%22: 1, %222B%22: 2, %223B%22:3, %224B%22:4, %226B%22:6%7D%0A        return gasto%5Bself.__hardness%5D%0A    %0A    def __str__(self):%0A        return f%22%5B%7Bself.__thickness%7D:%7Bself.__hardness%7D:%7Bself.__size%7D%5D%22%0A%0Aclass Tambor:%0A    def __init__(self, qtd: int):%0A        self.__qtd = list%5BLead %7C None%5D = %5B%5D%0A        for i in range (qtd):%0A            self.__qtd.append(None)%0A    %0A    def __str__(self):%0A        return f%22%7Bself.__qtd%7D%22%0A    %0Aclass Pencil:%0A    def __init__(self, thickness: float , qtdtambor: Tambor):%0A        self.__thickness = thickness%0A        self.__tip: Lead %7C None = None%0A        self.__tambor: list%5BTambor %7C None%5D = %5BLead%5D%0A        for i in range (qtdtambor):%0A            self.__tambor.append(self.__tip)%0A%0A    def getTambor(self):%0A        return self.__tambor%0A    %0A    def __str__(self):%0A        if self.__tip == None:%0A            return f%22calibre: %7Bself.__thickness%7D, bico: %5B%5D, tambor: %3C%3E%22%0A        return f%22calibre: %7Bself.__thickness%7D, bico: %5B%5D, tambor: %7Bself.__tambor%7D%22%0A%0A    def getLead(self):%0A        return self.__tip%0A    %0A    def setLead(self, value: Lead):%0A        self.__tip = value%0A%0A    def insert(self, grafite: Lead):%0A        if self.__tip is not None:%0A            print(%22fail ja existe grafite%22)%0A            return%0A        if grafite.getThickness() != self.__thickness:%0A            print(%22fail: calibre incompat%C3%ADvel%22)%0A            return%0A        self.__tip = grafite%0A%0A    def remove(self):%0A        if self.__tip == None:%0A            print(%22fail: nao existe grafite%22)%0A            return%0A        self.__tip = None%0A%0A%0A%0A%0Adef main():%0A    pencil =  None%0A    while True:%0A        line = input()%0A        print(%22$%22 + line)%0A        args = line.split(%22 %22)%0A%0A        if args%5B0%5D == %22end%22:%0A            break%0A%0A        if args%5B0%5D == %22show%22:%0A            print(pencil)%0A%0A        if args%5B0%5D == %22init%22:%0A            pencil = Pencil(float(args%5B1%5D), int(args%5B2%5D))%0A%0A        if args%5B0%5D == %22insert%22:%0A            pencil.insert(Lead(float(args%5B1%5D), args%5B2%5D, int(args%5B3%5D)))%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0Amain()\n+@@ -1073,20 +1073,16 @@%0A one%255D = %255B%0A-Lead%0A %255D%250A      %0A\n",
+            "lines": "4"
+        },
+        {
+            "label": "2025-11-18_11-13-06",
+            "content": "@@ -928,16 +928,36 @@\n s: float\n+ , qtdtambor: Tambor\n ):%0A     \n@@ -1079,16 +1079,56 @@\n  %5BLead%5D%0A\n+        for i in range (qtdtambor):%0A    \n         \n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-18_11-17-09",
+            "content": "@@ -2226,16 +2226,30 @@\n args%5B1%5D)\n+, int(args%5B2%5D)\n )%0A%0A     \n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-18_11-17-18",
+            "content": "@@ -719,17 +719,18 @@\n lf.__qtd\n-:\n+ =\n  list%5BLe\n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-18_11-18-58",
+            "content": "@@ -474,17 +474,17 @@\n sto = %7B%22\n-H\n+1\n B%22: 1, %22\n@@ -1038,18 +1038,72 @@\n ist%5B\n-Lead%5D = %5B%5D\n+Tambor %7C None%5D = %5BLead%5D%0A        self.__tambor.append(self.__tip)\n %0A%0A  \n@@ -1289,76 +1289,8 @@\n %3C%3E%22%0A\n-        tambor_str = %22, %22.join(str(lead) for lead in self.__tambor)%0A\n     \n@@ -1353,22 +1353,23 @@\n or: \n-%3C%7Btambor_str%7D%3E\n+%7Bself.__tambor%7D\n %22%0A%0A \n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-18_11-29-20",
+            "content": "@@ -1775,29 +1775,20 @@\n .__t\n-ambor.append(\n+ip = \n grafite\n-)\n %0A%0A  \n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-18_11-30-52",
+            "content": "@@ -1139,23 +1139,8 @@\n     \n- tip_str = %22%5B%5D%22\n  if \n@@ -1154,46 +1154,88 @@\n tip \n-is\n+==\n  None\n- else str(self.__tip) %0A        \n+:%0A            return f%22calibre: %7Bself.__thickness%7D, bico: %5B%5D, tambor: %3C%3E%22\n %0A   \n@@ -1356,17 +1356,8 @@\n o: %5B\n-%7Btip_str%7D\n %5D, t\n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-18_11-32-34",
+            "content": "@@ -1195,16 +1195,24 @@\n __tip) %0A\n+        \n %0A       \n@@ -1324,16 +1324,17 @@\n , bico: \n+%5B\n %7Btip_str\n@@ -1334,16 +1334,17 @@\n tip_str%7D\n+%5D\n , tambor\n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-18_11-32-51",
+            "content": "@@ -1218,16 +1218,17 @@\n _str = %22\n+,\n  %22.join(\n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-18_11-33-20",
+            "content": "@@ -1218,16 +1218,17 @@\n _str = %22\n+ \n %22.join(s\n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-18_11-33-24",
+            "content": "@@ -1218,17 +1218,16 @@\n _str = %22\n- \n %22.join(s\n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-18_11-33-55",
+            "content": "@@ -1,2346 +1,51 @@\n-class Lead:%0A    def __init__(self, thickness: float, hardness: str, size: int):%0A        self.__thickness = thickness%0A        self.__hardness = hardness%0A        self.__size = size%0A%0A    def getThickness(self):%0A        return self.__thickness%0A    %0A    def getHardness(self):%0A        return self.__hardness%0A    %0A    def getSize(self):%0A        return self.__size%0A    %0A    def setSize(self, value: int):%0A        self.__size = value%0A%0A    def usagePerSheet(self) -%3E int:%0A        gasto = %7B%22HB%22: 1, %222B%22: 2, %223B%22:3, %224B%22:4, %226B%22:6%7D%0A        return gasto%5Bself.__hardness%5D%0A    %0A    def __str__(self):%0A        return f%22%5B%7Bself.__thickness%7D:%7Bself.__hardness%7D:%7Bself.__size%7D%5D%22%0A%0Aclass Tambor:%0A    def __init__(self, qtd: int):%0A        self.__qtd: list%5BLead %7C None%5D = %5B%5D%0A        for i in range (qtd):%0A            self.__qtd.append(None)%0A    %0A    def __str__(self):%0A        return f%22%7Bself.__qtd%7D%22%0A    %0Aclass Pencil:%0A    def __init__(self, thickness: float):%0A        self.__thickness = thickness%0A        self.__tip: Lead %7C None = None%0A        self.__tambor: list%5BLead%5D = %5B%5D%0A%0A    def getTambor(self):%0A        return self.__tambor%0A    %0A    def __str__(self):%0A        tip_str = %22%5B%5D%22 if self.__tip is None else str(self.__tip) %0A%0A        tambor_str = %22%22.join(str(lead) for lead in self.__tambor)%0A        return f%22calibre: %7Bself.__thickness%7D, bico: %7Btip_str%7D, tambor: %3C%7Btambor_str%7D%3E%22%0A%0A    def getLead(self):%0A        return self.__tip%0A    %0A    def setLead(self, value: Lead):%0A        self.__tip = value%0A%0A    def insert(self, grafite: Lead):%0A        if self.__tip is not None:%0A            print(%22fail ja existe grafite%22)%0A            return%0A        if grafite.getThickness() != self.__thickness:%0A            print(%22fail: calibre incompat%C3%ADvel%22)%0A            return%0A        self.__tambor.append(grafite)%0A%0A    def remove(self):%0A        if self.__tip == None:%0A            print(%22fail: nao existe grafite%22)%0A            return%0A        self.__tip = None%0A%0A%0A%0A%0Adef main():%0A    pencil =  None%0A    while True:%0A        line = input()%0A        print(%22$%22 + line)%0A        args = line.split(%22 %22)%0A%0A        if args%5B0%5D == %22end%22:%0A            break%0A%0A        if args%5B0%5D == %22show%22:%0A            print(pencil)%0A%0A        if args%5B0%5D == %22init%22:%0A            pencil = Pencil(float(args%5B1%5D))%0A%0A        if args%5B0%5D == %22insert%22:%0A            pencil.insert(Lead(float(args%5B1%5D), args%5B2%5D, int(args%5B3%5D)))%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0Amain()\n+@@ -1218,16 +1218,17 @@%0A _str = %2522%0A+ %0A %2522.join(s%0A\n",
+            "lines": "4"
+        },
+        {
+            "label": "2025-11-18_11-34-06",
+            "content": "@@ -1912,122 +1912,8 @@\n one%0A\n-    %0A    def pull(self):%0A        puxou = self.__tambor%5B0%5D%0A        del self.__tambor%5B0%5D%0A        self.__tip = puxou%0A\n %0A%0A%0A%0A\n@@ -2328,63 +2328,8 @@\n ))%0A%0A\n-        if args%5B0%5D == %22pull%22:%0A            pencil.pull()\n %0A%0A%0A%0A\n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-18_11-37-14",
+            "content": "@@ -1937,96 +1937,8 @@\n f):%0A\n-        if self.__tip is not None:%0A            print(%22fail: ja existe grafite no bico%22)%0A\n     \n",
+            "lines": "108"
+        },
+        {
+            "label": "2025-11-18_11-37-59",
+            "content": "@@ -2114,17 +2114,16 @@\n xou%0A%0A%0A%0A%0A\n-%0A\n def main\n@@ -2587,68 +2587,8 @@\n ()%0A%0A\n-        if args%5B0%5D == %22remove%22:%0A            pencil.remove()%0A\n %0A%0A%0A%0A\n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-11-18_11-38-57",
+            "content": "@@ -2025,116 +2025,8 @@\n o%22)%0A\n-            return%0A        if not self.__tambor:%0A            print(%22fail: tambor vazio%22)%0A            return%0A\n     \n",
+            "lines": "113"
+        },
+        {
+            "label": "2025-11-18_11-45-12",
+            "content": "@@ -2223,491 +2223,8 @@\n ou%0A%0A\n-    def write(self):%0A        if self.__tip is None:%0A            print(%22fail: nao existe grafite%22)%0A            return%0A        %0A        gasto = self.__tip.usagePerSheet()%0A        size = self.__tip.getSize()%0A%0A        if size %3C= 10;%0A            print(%22fail: tamanho insuficiente%22)%0A            return%0A        %0A        if size - gasto %3C 10:%0A            self.__tip.setSize(10)%0A            print(%22fail: folha incompleta%22)%0A            return%0A        %0A        self.__tip.setSize(size - gasto)%0A\n %0A%0A%0A%0A\n@@ -2399,34 +2399,32 @@\n  break%0A%0A        \n-el\n if args%5B0%5D == %22s\n@@ -2456,34 +2456,32 @@\n encil)%0A%0A        \n-el\n if args%5B0%5D == %22i\n@@ -2531,34 +2531,32 @@\n s%5B1%5D))%0A%0A        \n-el\n if args%5B0%5D == %22i\n@@ -2635,34 +2635,32 @@\n %5B3%5D)))%0A%0A        \n-el\n if args%5B0%5D == %22p\n@@ -2692,34 +2692,32 @@\n pull()%0A%0A        \n-el\n if args%5B0%5D == %22r\n@@ -2757,68 +2757,8 @@\n ()%0A%0A\n-        elif args%5B0%5D == %22write%22:%0A            pencil.write()%0A\n %0A%0A%0A%0A\n",
+            "lines": "117"
+        },
+        {
+            "label": "2025-11-18_11-49-24",
+            "content": "@@ -2446,17 +2446,17 @@\n ze %3C= 10\n-:\n+;\n %0A       \n",
+            "lines": "137"
+        },
+        {
+            "label": "2025-11-18_11-49-36",
+            "content": "@@ -2314,23 +2314,16 @@\n  grafite\n- no bic\n %22)%0A     \n",
+            "lines": "137"
+        },
+        {
+            "label": "2025-11-18_11-50-00",
+            "content": "@@ -2313,33 +2313,32 @@\n e grafite no bic\n-o\n %22)%0A            r\n",
+            "lines": "137"
+        },
+        {
+            "label": "2025-11-18_11-50-10",
+            "content": "@@ -2712,16 +2712,18 @@\n asto)%0A%0A%0A\n+%0A%0A\n def main\n@@ -3319,67 +3319,8 @@\n ()%0A%0A\n-        else:%0A            print(%22fail: comando invalido%22)%0A%0A\n %0A%0A%0A%0A\n",
+            "lines": "137"
+        },
+        {
+            "label": "2025-11-18_11-51-14",
+            "content": "@@ -3372,14 +3372,19 @@\n lido%22)%0A%0A\n+%0A%0A%0A%0A%0A\n main()\n",
+            "lines": "138"
+        },
+        {
+            "label": "2025-11-18_11-51-26",
+            "content": "class Lead:\n    def __init__(self, thickness: float, hardness: str, size: int):\n        self.__thickness = thickness\n        self.__hardness = hardness\n        self.__size = size\n\n    def getThickness(self):\n        return self.__thickness\n    \n    def getHardness(self):\n        return self.__hardness\n    \n    def getSize(self):\n        return self.__size\n    \n    def setSize(self, value: int):\n        self.__size = value\n\n    def usagePerSheet(self) -> int:\n        gasto = {\"HB\": 1, \"2B\": 2, \"3B\":3, \"4B\":4, \"6B\":6}\n        return gasto[self.__hardness]\n    \n    def __str__(self):\n        return f\"[{self.__thickness}:{self.__hardness}:{self.__size}]\"\n\nclass Tambor:\n    def __init__(self, qtd: int):\n        self.__qtd: list[Lead | None] = []\n        for i in range (qtd):\n            self.__qtd.append(None)\n    \n    def __str__(self):\n        return f\"{self.__qtd}\"\n    \nclass Pencil:\n    def __init__(self, thickness: float):\n        self.__thickness = thickness\n        self.__tip: Lead | None = None\n        self.__tambor: list[Lead] = []\n\n    def getTambor(self):\n        return self.__tambor\n    \n    def __str__(self):\n        tip_str = \"[]\" if self.__tip is None else str(self.__tip) \n\n        tambor_str = \"\".join(str(lead) for lead in self.__tambor)\n        return f\"calibre: {self.__thickness}, bico: {tip_str}, tambor: <{tambor_str}>\"\n\n    def getLead(self):\n        return self.__tip\n    \n    def setLead(self, value: Lead):\n        self.__tip = value\n\n    def insert(self, grafite: Lead):\n        if self.__tip is not None:\n            print(\"fail ja existe grafite\")\n            return\n        if grafite.getThickness() != self.__thickness:\n            print(\"fail: calibre incompat\u00edvel\")\n            return\n        self.__tambor.append(grafite)\n\n    def remove(self):\n        if self.__tip == None:\n            print(\"fail: nao existe grafite\")\n            return\n        self.__tip = None\n    \n    def pull(self):\n        if self.__tip is not None:\n            print(\"fail: ja existe grafite no bico\")\n            return\n        if not self.__tambor:\n            print(\"fail: tambor vazio\")\n            return\n        puxou = self.__tambor[0]\n        del self.__tambor[0]\n        self.__tip = puxou\n\n    def write(self):\n        if self.__tip is None:\n            print(\"fail: nao existe grafite no bico\")\n            return\n        \n        gasto = self.__tip.usagePerSheet()\n        size = self.__tip.getSize()\n\n        if size <= 10:\n            print(\"fail: tamanho insuficiente\")\n            return\n        \n        if size - gasto < 10:\n            self.__tip.setSize(10)\n            print(\"fail: folha incompleta\")\n            return\n        \n        self.__tip.setSize(size - gasto)\n\n\ndef main():\n    pencil =  None\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n\n        if args[0] == \"end\":\n            break\n\n        elif args[0] == \"show\":\n            print(pencil)\n\n        elif args[0] == \"init\":\n            pencil = Pencil(float(args[1]))\n\n        elif args[0] == \"insert\":\n            pencil.insert(Lead(float(args[1]), args[2], int(args[3])))\n\n        elif args[0] == \"pull\":\n            pencil.pull()\n\n        elif args[0] == \"remove\":\n            pencil.remove()\n\n        elif args[0] == \"write\":\n            pencil.write()\n\n        else:\n            print(\"fail: comando invalido\")\n\nmain()",
+            "lines": "133"
+        }
+    ]
+}
